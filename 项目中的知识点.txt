@@ -1,0 +1,18 @@
+增加js系列功能
+利用data.json来控制页面显示的内容
+
+1、控制文本大小写（大写）
+text-transform: uppercase;
+
+2、控制文本之间的间距
+letter-spacing: 0.225em;
+
+3、a标签在div中垂直居中
+div:{height:inherit;line-height: inherit;}
+div a{display: inline-block;}
+
+4、伪类
+:focus 用于选取获得焦点的元素
+:focus-within 元素本身或者其后代获得焦点
+
+transform-origin
