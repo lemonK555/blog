@@ -1,0 +1,5 @@
+﻿gem -v
+输出版本号表示sass安装成功
+
+sass --watch <要编译的Sass文件路径>/style.scss:<要输出CSS文件路径>/style.css
+监听目标，当sass文件改变时，自动编译。
