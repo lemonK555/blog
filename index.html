@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
@@ -32,22 +32,62 @@
 		</nav>
 		<!-- 展示栏 -->
 		<header>
-			<div class="banner">
+			<div class="banner" id="banner">
 				<div class="banner-info">
-					<h1>Ai宠回家</h1>
-					<!-- <p>这是一个简单的Ai宠回家系列页面——首页</p> -->
+					<h1>Ai宠回家</h1></br>
+					<p>这是一个简单的页面展示系列之首页</p>
 					<button class="btn btn-danger">了解我</button>
+					
 				</div>
-				<a href="#one">MORE</a>
+				<div class="banner-more">
+					<a href="#one">MORE</a></br>
+				</div>
 			</div>
 		</header>
+		<!-- 展示的第一部分 -->
+		<section id="one" class="wrapper">
+			<div class="inner">
+				<div class="major">
+					<h2>这是首页的第一部分的标题</h2>
+					<p>这是首页第一部分的主要内容</p>
+				</div>
+				<ul class="icons">
+					<li><span class="icon">items</span></li>
+					<li><span class="icon">items</span></li>
+					<li><span class="icon">items</span></li>
+				</ul>
+			</div>
+		</section>
 	</div>
   </div>    
+  
 
-    
+<!--   <div id="menu">
+  	<ul>
+  		<li><a href="">首页</a></li>
+  		<li><a href="">图片画廊</a></li>
+  		<li><a href="">爱心表白</a></li>
+  		<li><a href="">待定1</a></li>
+  		<li><a href="">待定2</a></li>
+  	</ul>
+  	<a href="#menu" class="close"></a>
+  </div>
+     -->
 
-
-
+<script src="js/main.js"></script>
+<script type="text/javascript">
+window.onload = function(){
+	var banner = document.getElementById("banner");
+	var banner_h = banner.getElementsByTagName("h1");
+	var banner_p = banner.getElementsByTagName("p");
+	var banner_b = banner.getElementsByTagName("button");
+	var banner_a = banner.getElementsByTagName("a");
+	showBanner("banner_h",banner_h);
+	showBanner("banner_p",banner_p);
+	showBanner("banner_b",banner_b);
+	showBanner("banner_a",banner_a);
+}	
+</script>
 
 
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
