@@ -44,9 +44,42 @@ arr[arr.length-1];
 
 str.endsWith(target)；str.startsWith(target);
 
+12、让行内元素处于一排，可以添加display:inline-block;
 
+13、元素的2D旋转
+transform:rotate(-45deg);
+
+14、奇偶选择器
+:nth-child(odd/even/2n+1/n)
+
+15、dicv之间有间隙以及img与div之间有间隙
+第一种：diplay:inlime-block;改为diaplay:block;
+第二种：把div中的font-size设为0
+第三种：修改img的vertical-align属性middle/buttom/top
+
+16、让div中的元素按特定顺序排列
+第一步：设置div的display:flex/inline-flex;
+第二步：设置排序方式-->flex-direction:
+横向排列，左对齐，row;
+反转横向排列，右对齐： row-reverse;
+纵向排列：colume;
+反转纵向排列：colume-reverse;
+
+17、flex中的div布局align-content:
+顶部对齐：flex-start;
+底部对齐：flex-end;
+垂直居中对齐：center;
+顶部、底部都对齐：stretch;
+顶部、底部都对齐，中间均分:space-between;
+轴线两侧间隔相等：space-around;
+
+18、:nth-child(n)
+匹配属于其父元素的第 N 个子元素，不论元素的类型
 
 
 待解决：
 banner before的动画效果
+优化变量、js提炼
+
+
 transform-origin
