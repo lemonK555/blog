@@ -1,7 +1,3 @@
-var screenWidth = window.innerWidth;
-var screenHeight = window.innerHeight;
-var clientHeight = document.body.clientHeight;
-var clientWidth = document.body.clientWidth;
 var menu = document.getElementById("menu");
 var allContent = document.getElementById("allContent");
 
@@ -21,7 +17,11 @@ function showBanner(str,e){
 }
 
 function showMenu(){
-
+	var screenWidth = window.innerWidth;
+	var screenHeight = window.innerHeight;
+	var clientHeight = document.body.clientHeight;
+	var clientWidth = document.body.clientWidth;
+	
 	
 	menu.style.height = screenHeight+"px";
 	menu.style.right = "0";
