@@ -76,6 +76,25 @@ transform:rotate(-45deg);
 18、:nth-child(n)
 匹配属于其父元素的第 N 个子元素，不论元素的类型
 
+19、图片/修饰可以直接添加到伪元素中
+content:url();
+
+20、获取高度
+第一种：获取屏幕高度（屏幕分辨率）
+window.screen.height 
+第二种：获取屏幕工作区域的高度（去掉状态栏）
+window.screen.availHeight  
+第三种：网页全文的高度
+document.body.scrollHeight  
+第四种：滚动条卷上去的高度和向右卷的宽度
+document.body.scrollTop  
+document.body.scrollLeft  
+第五种：网页可见区域的高度（不加边线）
+document.body.clientHeight 
+第六种：网页可见区域的高度（加边线）
+document.body.offsetHeight
+
+21、为什么menu的width获取不了？
 
 待解决：
 banner before的动画效果
