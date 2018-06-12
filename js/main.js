@@ -1,3 +1,10 @@
+var screenWidth = window.innerWidth;
+var screenHeight = window.innerHeight;
+var clientHeight = document.body.clientHeight;
+var clientWidth = document.body.clientWidth;
+var menu = document.getElementById("menu");
+var allContent = document.getElementById("allContent");
+
 function showBanner(str,e){
 	var last = str.charAt(str.length - 1);
 	if(last === "h"){
@@ -11,4 +18,27 @@ function showBanner(str,e){
 		e[0].style.transition = "opacity 1s ease 2s";
 	}
 	e[0].style.opacity = "1";
+}
+
+function showMenu(){
+
+	
+	menu.style.height = screenHeight+"px";
+	menu.style.right = "0";
+	menu.style.transition = "right 1s ease 0.5s";
+
+
+	allContent.style.height = clientHeight+"px";
+	allContent.style.width = clientWidth - 320+"px";
+	allContent.style.background = "rgba(0,0,0,0.3)";
+	allContent.style.transition = "width 1s ease 0.5s";
+}
+
+function closeMenu(){
+	menu.style.right = "-350px";
+	menu.style.transition = "right 1s ease 0.5s";
+	allContent.style.background = "rgba(0,0,0,0)";
+	allContent.style.width = clientWidth+"px";
+	allContent.style.transition = "width 1s ease 0.5s, background 1s ease 0.5s";
+
 }
