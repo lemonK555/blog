@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
     <title>首页</title>
-    <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+
     <link rel="stylesheet" href="main.css">
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -14,7 +14,7 @@
     <![endif]-->
   </head>
   <body>
-  <div class="page-wrap">
+  <div class="page-wrap" >
 	<div class="container-fluid" style="padding: 0">
 		<!-- 导航栏 -->
 		<nav>
@@ -24,9 +24,8 @@
 				</a>
 			</div>
 			<div class="nav-menu">
-				<a href="#menu">
+				<a href="#menu" onclick="showMenu()">
 					<span>Menu</span>
-					<span class="glyphicon glyphicon-align-justify"></span>
 				</a>
 			</div>
 		</nav>
@@ -137,20 +136,24 @@
 			</div>
 		</footer>
 	</div>
+
+
+  	<div id="menu">
+	  	<div class="menu-close" onclick="closeMenu()">
+	  		<img src="img/close.png" alt="">
+	  	</div>
+	  	<ul>
+	  		<li><a href="index.html">首页</a></li>
+	  		<li><a href="page/showPic.html">图片画廊</a></li>
+	  		<li><a href="page/countdown.html">图片轮播</a></li>
+	  		<li><a href="">待定1</a></li>
+	  		<li><a href="">待定2</a></li>
+	  	</ul>
+	  	<a href="#menu" class="close"></a>
+	</div>
+	<div id="allContent"></div>
   </div>    
   
-
-<!--   <div id="menu">
-  	<ul>
-  		<li><a href="">首页</a></li>
-  		<li><a href="">图片画廊</a></li>
-  		<li><a href="">爱心表白</a></li>
-  		<li><a href="">待定1</a></li>
-  		<li><a href="">待定2</a></li>
-  	</ul>
-  	<a href="#menu" class="close"></a>
-  </div>
-     -->
 
 <script src="js/main.js"></script>
 <script type="text/javascript">
@@ -167,9 +170,5 @@ window.onload = function(){
 }	
 </script>
 
-
-    <!-- <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script> -->
-    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <!-- <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   </body>
 </html>
