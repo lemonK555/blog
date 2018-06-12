@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片轮播</title>
+	<link rel="stylesheet" href="../css/lunbo.css">
+	<script type="text/javascript">
+		window.onload=function ()
+		{
+			var content = document.getElementById('content');
+			var list = document.getElementById('img-list');
+			var buttons = document.getElementById('buttons').getElementsByTagName('span');
+			var left = document.getElementById('left');
+			var right = document.getElementById('right');
+			var index = 1;
+			var animated = false;//优化，待动画执行完毕，再运行动画，避免内存过多占用，造成卡顿
+			var timer;
+			//亮小圆点
+			function showButton()
+			{
+				for(var i=0;i<buttons.length;i++)
+				{
+					if(buttons[i].className=='on')
+					{
+						buttons[i].className=' ';
+						break;
+					}
+				}
+				buttons[index-1].className='on';
+			}
+			function animate(offset)
+			{
+				animated=true;
+				var newLeft= parseInt(list.style.left)+offset;
+				//字符串转化为整型
+				var time = 300;//位移用时
+				var interval = 10;//位移间隔时间
+				var speed = offset/(time/interval);//每次位移量
+
+				function go()
+				{
+					//左移动
+					if(speed<0&&parseInt(list.style.left)>newLeft||speed>0&&parseInt(list.style.left)<newLeft)
+					{
+						list.style.left = parseInt(list.style.left) + speed + 'px';
+						setTimeout(go,interval);
+					}
+					else
+					{
+						animated = false;
+						list.style.left = newLeft + 'px';
+						if (newLeft>-290) 
+						{
+							list.style.left=-870+'px';
+						}
+						if (newLeft<-870) 
+						{
+							list.style.left=-290+'px';
+						}
+					}
+				}
+				go();
+
+				
+			}
+			function play()
+			{
+				timer = setInterval(function ()
+				{
+					right.onclick();
+				},2000);
+			}
+			function stop()
+			{
+				clearInterval(timer);
+			}
+			left.onclick = function()
+			{
+				if(index==1)
+				{
+					index=3;
+				}else
+				{
+					index-=1;
+				}
+				showButton();
+				if(animated == false){animate(290);}
+				
+			}
+			right.onclick = function()
+			{				
+				if(index==3)
+				{
+					index=1;
+				}else
+				{
+					index+=1;
+				}
+				showButton();
+				if(animated == false){animate(-290);}
+				
+			}
+			//按钮切换
+			for (var i = 0;i<buttons.length; i++) 
+			{
+				buttons[i].onclick = function()
+				{
+					if(this.className=='on')
+					{
+						return;//优化：点击相同按钮不运行程序
+					}
+					var myIndex = parseInt(this.getAttribute('index'));//获取自定义或自带属性
+					var offset = -290*(myIndex-index);
+					if(animated == false){animate(offset);}
+					index = myIndex;//切换到当前index值
+					showButton();
+				}
+			}
+			content.onmouseover = stop;
+			content.onmouseout = play;
+			play();
+		}
+	</script>
+</head>
+<body>
+	<div id="content">
+		<div id="img-list" style="left:-290px;">
+			<img src="../img/lunbo/2-2.jpg">
+			<img src="../img/lunbo/1-1.jpg">
+			<img src="../img/lunbo/2-1.jpg">
+			<img src="../img/lunbo/2-2.jpg">
+			<img src="../img/lunbo/1-1.jpg">
+		</div>
+		<div id="buttons">
+			<span index="1" class="on"></span>
+			<span index="2"></span>
+			<span index="3"></span>
+		</div>
+		<a href="javascript:;" id="left" class="arrow">&lt;</a>
+		<a href="javascript:;" id="right" class="arrow">&gt;</a>
+	</div>
+</body>
+</html>

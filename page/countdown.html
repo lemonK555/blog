@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title> 延时跳转 </title>
+<script type="text/javascript"> 
+  //定时器每秒调用一次fnDate()
+  setInterval("fnDate()",1000);
+  //js 获取当前时间
+  function fnDate(){
+    var oDiv=document.getElementById("content2");
+    var Dao=document.getElementById("dao");
+    var date=new Date();
+    var year=date.getFullYear();//当前年份
+    var month=date.getMonth();//当前月份
+    var data=date.getDate();//天
+    var hours=date.getHours();//小时
+    var minute=date.getMinutes();//分
+    var second=date.getSeconds();//秒
+    var time=year+"-"+TM((month+1))+"-"+TM(data)+" "+TM(hours)+":"+TM(minute)+":"+TM(second);
+    oDiv.innerHTML=time;
+    dao.innerHTML=dao.innerHTML-1;
+  }
+  //补位 当某个字段不是两位数时补0
+  function TM(str){
+    var num;
+    str>10?num=str:num="0"+str;
+    return num;
+  } 
+
+  function  D_show()
+  { 
+    window.location.href='lunbo.html';   
+  } 
+  setTimeout("D_show()",5000) ; 
+</script>  
+<style>
+  body{background: #666}
+  #content1{font-size: 40px;text-align: center;margin-top: 300px;color: #eee}
+  #content2{font-size: 40px;text-align: center;margin: 20px;color:#eee}
+  #dao{color: red;font-size: 55px;}
+</style> 
+</head>
+<body>
+  <div id="content1">网页将在<span id="dao">5</span>秒后跳转</div>
+  <div id="content2"> </div>
+  
+</body>
+</html>
