@@ -9,7 +9,7 @@ nav {
   background: #505053;
   position: fixed;
   top: 0;
-  z-index: 999; }
+  z-index: 990; }
   nav .nav-home {
     font-size: 16px;
     font-weight: bold;
@@ -259,7 +259,8 @@ footer {
   background: #21b2a6;
   position: fixed;
   right: -320px;
-  top: 0; }
+  top: 0; 
+  z-index:999;}
   #menu .menu-close {
     height: 25px;
     width: 25px;
