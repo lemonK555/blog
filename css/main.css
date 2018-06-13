@@ -6,7 +6,10 @@ nav {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background: #505053; }
+  background: #505053;
+  position: fixed;
+  top: 0;
+  z-index: 999; }
   nav .nav-home {
     font-size: 16px;
     font-weight: bold;
@@ -18,7 +21,7 @@ nav {
     right: 1.25em;
     top: 0; }
     nav .nav-menu span::after {
-      background-image: url(img/menuS.png);
+      background-image: url(../img/menuS.png);
       margin-bottom: 5px;
       content: '';
       display: inline-block;
@@ -37,11 +40,12 @@ nav {
 
 header {
   height: 450px;
+  margin-top: 50px;
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-image: url(img/banner.jpg); }
+  background-image: url(../img/banner.jpg); }
   header .banner {
     width: 100%;
     height: 450px;
@@ -74,7 +78,11 @@ header {
       header .banner .banner-info button {
         opacity: 0;
         letter-spacing: 0.225em;
-        padding: 0.5em 2em; }
+        padding: 0.7em 2em;
+        background: #ef5e4a;
+        border: 0;
+        color: #fff;
+        border-radius: 3px; }
     header .banner .banner-more {
       width: 100%;
       position: absolute;
@@ -90,7 +98,7 @@ header {
           width: 20px;
           height: 20px;
           content: "";
-          background: url(img/goDown.png);
+          background: url(../img/goDown.png);
           background-size: contain;
           background-position: center;
           background-repeat: no-repeat;
@@ -131,11 +139,11 @@ header {
         margin: 0 2em;
         text-align: center; }
         #one .inner .icons li .coffee {
-          background: url(img/coffee.png); }
+          background: url(../img/coffee.png); }
         #one .inner .icons li .music {
-          background: url(img/music.png); }
+          background: url(../img/music.png); }
         #one .inner .icons li .lamp {
-          background: url(img/lamp.png); }
+          background: url(../img/lamp.png); }
         #one .inner .icons li .icon {
           height: 40px;
           width: 40px;
